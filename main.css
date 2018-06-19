@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form label,
+form textarea {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+form textarea {
+    padding: 10px;
+}
+
+form input[type="button"] {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+form input[type="reset"],
+#limpar {
+    cursor: pointer;
+}
