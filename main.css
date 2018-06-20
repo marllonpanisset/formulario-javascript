@@ -16,6 +16,10 @@ form label {
     margin-bottom: 10px;
 }
 
+form label sup {
+    color: red;
+}
+
 form input[type="text"],
 form input[type="email"],
 form label,
@@ -33,6 +37,10 @@ form .erro.show {
     display: block;
     color: red;
     font-size: 12px;
+    position: relative;
+    float: left;
+    width: 100%;
+    margin: 5px 0 5px 5px;
 }
 
 form textarea {
