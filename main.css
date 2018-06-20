@@ -26,6 +26,7 @@ form h1 {
 form label {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 15px;
 }
 
 form label sup {
@@ -39,6 +40,15 @@ form textarea {
     position: relative;
     float: left;
     width: 100%;
+}
+
+form input[type="text"],
+form input[type="email"],
+textarea {
+    border-radius: 0;
+    border: 1px solid #222;
+    padding: 10px;
+    font-size: 13px;
 }
 
 form .erro {
@@ -85,4 +95,15 @@ form input[type="reset"],
 
 #display ul {
     padding-left: 15px;
+    list-style-type: disclosure-closed;
+}
+
+#display ul li {
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+#display ul li strong {
+    font-size: 15px;
 }

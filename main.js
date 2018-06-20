@@ -29,10 +29,10 @@ function getData() {
         mensagem.nextElementSibling.classList.remove("show");
     }
     if (nome.value.length > 0 && email.value.length > 0 && assunto.value.length > 0 && mensagem.value.length > 0){
-        displayNome.innerHTML += nome.value;
-        displayEmail.innerHTML += email.value;
-        displayAssunto.innerHTML += assunto.value;
-        displayMensagem.innerHTML += mensagem.value;
+        displayNome.innerHTML += "<strong>Nome:</strong> " + nome.value;
+        displayEmail.innerHTML += "<strong>E-mail:</strong> " + email.value;
+        displayAssunto.innerHTML += "<strong>Assunto:</strong> " +  assunto.value;
+        displayMensagem.innerHTML += "<strong>Mensagem:</strong> " + mensagem.value;
     }
 }
 
