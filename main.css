@@ -7,6 +7,8 @@ form {
     width: 500px;
     margin-left: auto;
     margin-right: auto;
+    padding: 15px;
+    border: solid 1px #222;
 }
 
 form label {
@@ -23,6 +25,16 @@ form textarea {
     width: 100%;
 }
 
+form .erro {
+    display: none;
+}
+
+form .erro.show {
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
 form textarea {
     padding: 10px;
 }
@@ -35,4 +47,17 @@ form input[type="button"] {
 form input[type="reset"],
 #limpar {
     cursor: pointer;
+}
+
+#display {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 15px;
+    border: 1px solid #222;
+}
+
+#display ul {
+    padding-left: 15px;
 }
