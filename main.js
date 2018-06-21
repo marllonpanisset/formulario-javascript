@@ -5,11 +5,6 @@ var nome = document.getElementById("nome");
 var email = document.getElementById("email");
 var assunto = document.getElementById("assunto");
 var mensagem = document.getElementById("mensagem");
-// var displayNome = document.getElementById("displayNome");
-// var displayEmail = document.getElementById("displayEmail");
-// var displayAssunto = document.getElementById("displayAssunto");
-// var displayMensagem = document.getElementById("displayMensagem");
-
 
 function getData() {
     if (nome.value.length <= 0) {
