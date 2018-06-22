@@ -1,52 +1,104 @@
-var ul = document.createElement("ul");
-var li = document.createElement("li");
+var div = document.createElement("div");
 var display = document.getElementById("display");
 var nome = document.getElementById("nome");
 var email = document.getElementById("email");
 var assunto = document.getElementById("assunto");
 var mensagem = document.getElementById("mensagem");
 
-function getData() {
-    if (nome.value.length <= 0) {
-        nome.nextElementSibling.classList.add("show");
-    } else {
-        nome.nextElementSibling.classList.remove("show");
+function formValidate() {
+    nome.onkeypress = function () {
+        if (nome.value.length <= 0) {
+            nome.nextElementSibling.classList.add("show");
+            nome.classList.add("erro");
+        } else {
+            nome.nextElementSibling.classList.remove("show");
+            nome.classList.remove("erro");
+        }
     }
-
-    if (email.value.length <= 0) {
-        email.nextElementSibling.classList.add("show");
-    } else {
-        email.nextElementSibling.classList.remove("show");
+    email.onkeypress = function () {
+        if (email.value.length <= 0) {
+            email.nextElementSibling.classList.add("show");
+            email.classList.add("erro");
+        } else {
+            email.nextElementSibling.classList.remove("show");
+            email.classList.remove("erro");
+        }
     }
-
-    if (assunto.value.length <= 0) {
-        assunto.nextElementSibling.classList.add("show");
-    } else {
-        assunto.nextElementSibling.classList.remove("show");
+    assunto.onkeypress = function () {
+        if (assunto.value.length <= 0) {
+            assunto.nextElementSibling.classList.add("show");
+            assunto.classList.add("erro");
+        } else {
+            assunto.nextElementSibling.classList.remove("show");
+            assunto.classList.remove("erro");
+        }
     }
-
-    if (mensagem.value.length <= 0) {
-        mensagem.nextElementSibling.classList.add("show");
-    } else {
-        mensagem.nextElementSibling.classList.remove("show");
-    }
-
-    if (nome.value.length > 0 && email.value.length > 0 && assunto.value.length > 0 && mensagem.value.length > 0) {
-        display.appendChild(ul);
-        
-        ul.appendChild(li).innerHTML += "<strong>Nome:</strong> " + nome.value;
-        ul.appendChild(li).innerHTML += "<br />";
-        ul.appendChild(li).innerHTML += "<strong>E-mail:</strong> " + email.value;
-        ul.appendChild(li).innerHTML += "<br />";
-        ul.appendChild(li).innerHTML += "<strong>Assunto:</strong> " + assunto.value;
-        ul.appendChild(li).innerHTML += "<br />";
-        ul.appendChild(li).innerHTML += "<strong>Mensagem:</strong> " + mensagem.value;
+    mensagem.onkeypress = function () {
+        if (mensagem.value.length <= 0) {
+            mensagem.nextElementSibling.classList.add("show");
+            mensagem.classList.add("erro");
+        } else {
+            mensagem.nextElementSibling.classList.remove("show");
+            mensagem.classList.remove("erro");
+        }
     }
 }
 
-// function limparDisplay() {
-//     displayNome.innerHTML = "";
-//     displayEmail.innerHTML = "";
-//     displayAssunto.innerHTML = "";
-//     displayMensagem.innerHTML = "";
-// }
+formValidate();
+
+var printData = function () {
+    display.appendChild(div);
+    div.classList.add("itens");
+    
+    div.innerHTML += "<strong>Nome:</strong> " + nome.value;
+    div.innerHTML += "<br />";
+    div.innerHTML += "<strong>E-mail:</strong> " + email.value;
+    div.innerHTML += "<br />";
+    div.innerHTML += "<strong>Assunto:</strong> " + assunto.value;
+    div.innerHTML += "<br />";
+    div.innerHTML += "<strong>Mensagem:</strong> " + mensagem.value;
+    div.innerHTML += "<br />";
+    div.innerHTML += "<br />";
+}
+
+function limparDisplay() {
+    var itens = display.getElementsByClassName("itens");
+    if(itens.length > 0) {
+        itens[0].parentNode.removeChild(itens[0]);
+        div.innerHTML = "";
+    }
+}
+
+function getData() {
+    if (nome.value.length <= 0) {
+        nome.nextElementSibling.classList.add("show");
+        nome.classList.add("erro");
+    } else {
+        nome.nextElementSibling.classList.remove("show");
+        nome.classList.remove("erro");
+    }
+    if (email.value.length <= 0) {
+        email.nextElementSibling.classList.add("show");
+        email.classList.add("erro");
+    } else {
+        email.nextElementSibling.classList.remove("show");
+        email.classList.remove("erro");
+    }
+    if (assunto.value.length <= 0) {
+        assunto.nextElementSibling.classList.add("show");
+        assunto.classList.add("erro");
+    } else {
+        assunto.nextElementSibling.classList.remove("show");
+        assunto.classList.remove("erro");
+    }
+    if (mensagem.value.length <= 0) {
+        mensagem.nextElementSibling.classList.add("show");
+        mensagem.classList.add("erro");
+    } else {
+        mensagem.nextElementSibling.classList.remove("show");
+        mensagem.classList.remove("erro");
+    }
+    if (nome.value.length > 0 && email.value.length > 0 && assunto.value.length > 0 && mensagem.value.length > 0) {
+        printData();
+    }
+}
