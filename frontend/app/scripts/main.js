@@ -6,7 +6,7 @@ var assunto = document.getElementById("assunto");
 var mensagem = document.getElementById("mensagem");
 
 function formValidate() {
-    nome.onkeypress = function () {
+    nome.onblur = function () {
         if (nome.value.length <= 0) {
             nome.nextElementSibling.classList.add("show");
             nome.classList.add("erro");
@@ -15,7 +15,7 @@ function formValidate() {
             nome.classList.remove("erro");
         }
     }
-    email.onkeypress = function () {
+    email.onblur = function () {
         if (email.value.length <= 0) {
             email.nextElementSibling.classList.add("show");
             email.classList.add("erro");
@@ -24,7 +24,7 @@ function formValidate() {
             email.classList.remove("erro");
         }
     }
-    assunto.onkeypress = function () {
+    assunto.onblur = function () {
         if (assunto.value.length <= 0) {
             assunto.nextElementSibling.classList.add("show");
             assunto.classList.add("erro");
@@ -33,7 +33,7 @@ function formValidate() {
             assunto.classList.remove("erro");
         }
     }
-    mensagem.onkeypress = function () {
+    mensagem.onblur = function () {
         if (mensagem.value.length <= 0) {
             mensagem.nextElementSibling.classList.add("show");
             mensagem.classList.add("erro");
@@ -49,7 +49,7 @@ formValidate();
 var printData = function () {
     display.appendChild(div);
     div.classList.add("itens");
-    
+
     div.innerHTML += "<strong>Nome:</strong> " + nome.value;
     div.innerHTML += "<br />";
     div.innerHTML += "<strong>E-mail:</strong> " + email.value;
@@ -58,12 +58,12 @@ var printData = function () {
     div.innerHTML += "<br />";
     div.innerHTML += "<strong>Mensagem:</strong> " + mensagem.value;
     div.innerHTML += "<br />";
-    div.innerHTML += "<br />";
+    div.innerHTML += "<hr />";
 }
 
 function limparDisplay() {
     var itens = display.getElementsByClassName("itens");
-    if(itens.length > 0) {
+    if (itens.length > 0) {
         itens[0].parentNode.removeChild(itens[0]);
         div.innerHTML = "";
     }
